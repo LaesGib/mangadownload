@@ -55,8 +55,8 @@ do
     list_of_pages=`find -iname "[0-9]*" | sort | cut -c 3-`
     for page in $list_of_pages
     do
-        echo "Страница $archive_name _$page скачена и распакована"
-        rename '' $archive_name'_'  $page # не может в имена с путем ./
+        echo Страница $archive_name\_$page\ скачена\ и\ распакована
+        mv $page $archive_name\_$page
     done
 
     if (( $(( chapter_number % $3 )) == 0 )); # 0 % 5 = 1
