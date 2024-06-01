@@ -55,8 +55,8 @@ do
     list_of_pages=`find -iname "[0-9]*" | sort | cut -c 3-`
     for page in $list_of_pages
     do
-        echo "The $archive_name _$page has been downloaded and unzipped"
-        rename '' $archive_name'_'  $page # can't in names with the path ./
+        echo The\ $archive_name\_$page\ has\ been\ downloaded\ and\ unzipped
+        mv $page $archive_name\_$page
     done
 
     if (( $(( chapter_number % $3 )) == 0 )); # 0 % 5 = 1
